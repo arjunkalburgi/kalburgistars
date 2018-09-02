@@ -3,22 +3,23 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import * as firebase from 'firebase';
-import { HomePage } from '../pages/home/home';
+import { SigninPage } from '../pages/signin/signin';
+import * as configData from './configData';
 
-const config = {
-  apiKey: "AIzaSyCJj7S8sQz9K2GZwMvGfsLc_7sxuPIafac",
-  authDomain: "stars-n-stuff.firebaseapp.com",
-  databaseURL: "https://stars-n-stuff.firebaseio.com",
-  projectId: "stars-n-stuff",
-  storageBucket: "stars-n-stuff.appspot.com",
-  messagingSenderId: "242200308130"
+export const config = {
+  apiKey: configData.apiKey,
+  authDomain: configData.authDomain,
+  databaseURL: configData.databaseURL,
+  projectId: configData.projectId,
+  storageBucket: configData.storageBucket,
+  messagingSenderId: configData.messagingSenderId
 };
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html', 
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = SigninPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
