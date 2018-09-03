@@ -1,9 +1,8 @@
-import { HomePage } from './../home/home';
-import { SigninPage } from './../signin/signin';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NewGroupPage } from '../new-group/new-group';
 import { HomePage } from '../home/home';
+import { SigninPage } from './../signin/signin';
 import * as firebase from 'Firebase';
 
 /**
@@ -24,9 +23,9 @@ export class GroupPage {
   ref = firebase.database().ref('groups/');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.ref.on('value', resp => {
+    this.ref.on('value', snapshot => {
       this.groups = [];
-      this.groups = snapshotToArray(resp);
+      this.groups = snapshotToArray(snapshot);
     });
   }
 
@@ -52,7 +51,7 @@ export const snapshotToArray = snapshot => {
 
   snapshot.forEach(childSnapshot => {
     let item = childSnapshot.val();
-    item.key = childSnapshot.key;
+    // item.key = childSnapshot.key;
     returnArr.push(item);
   });
 
