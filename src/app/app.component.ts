@@ -3,7 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import * as firebase from 'firebase';
-import { SigninPage } from '../pages/signin/signin';
+import { SplashPage } from '../pages/splash/splash';
 import * as configData from './configData';
 
 export const config = {
@@ -19,7 +19,7 @@ export const config = {
   templateUrl: 'app.html', 
 })
 export class MyApp {
-  rootPage:any = SigninPage;
+  rootPage:any = SplashPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

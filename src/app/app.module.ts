@@ -11,6 +11,7 @@ import { GroupPage } from './../pages/group/group';
 import { NewGroupPage } from './../pages/new-group/new-group';
 import { RestProvider } from '../providers/rest/rest';
 import { HttpClientModule } from '@angular/common/http';
+import { SplashPage } from '../pages/splash/splash';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     SigninPage,
     GroupPage,
-    NewGroupPage
+    NewGroupPage, 
+    SplashPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage, 
     SigninPage,
     GroupPage,
-    NewGroupPage
+    NewGroupPage, 
+    SplashPage
   ],
   providers: [
     StatusBar,
