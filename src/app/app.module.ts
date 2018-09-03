@@ -13,6 +13,18 @@ import { RestProvider } from '../providers/rest/rest';
 import { HttpClientModule } from '@angular/common/http';
 import { SplashPage } from '../pages/splash/splash';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as configData from './configData';
+
+export const config = {
+  apiKey: configData.apiKey,
+  authDomain: configData.authDomain,
+  databaseURL: configData.databaseURL,
+  projectId: configData.projectId,
+  storageBucket: configData.storageBucket,
+  messagingSenderId: configData.messagingSenderId
+};
 
 @NgModule({
   declarations: [
@@ -26,6 +38,7 @@ import { SplashPage } from '../pages/splash/splash';
   imports: [
     BrowserModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(config),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,6 +53,7 @@ import { SplashPage } from '../pages/splash/splash';
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFireAuth,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider
   ]
