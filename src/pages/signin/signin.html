@@ -14,15 +14,8 @@
 
 
 <ion-content padding>
-  <form (ngSubmit)="enterNickname()">
-    <ion-list>
-      <ion-item>
-        <ion-label floating>Enter your Nickname</ion-label>
-        <ion-input type="text" [(ngModel)]="data.nickname" name="nickname" required=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <button ion-button full round color="secondary" type="submit">Enter</button>
-      </ion-item>
-    </ion-list>
-  </form>
+  <button ion-button icon-left block clear (click)="loginWithGoogle()">
+    <ion-icon name="logo-google"></ion-icon>
+    Log in with Google
+  </button>
 </ion-content>
